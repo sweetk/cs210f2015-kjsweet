@@ -1,0 +1,25 @@
+KJ Sweet
+September 28, 2015
+This work is mine unless otherwise cited
+This program gives some example values for the Lab4.asm program.
+
+Two integer values: 50 and -35
+
+In HEXADECIMAL
+------------------------------------
+50: 32
+-35: FFFFFF23
+Logical AND: 10
+Logical OR: FFFFFFFF
+Logical left shift of 50: C8
+Logical left shift of -35: FFFFFF8C
+
+In BINARY
+------------------------------------
+50: 0000 0000 0000 0000 0000 0000 0011 0010
+-35: 1111 1111 1111 1111 1111 1111 1110 0011
+Logical XOR: 1111 1111 1111 1111 1111 1111 1111 0001
+Logical right shift of 50: 0000 0000 0000 0000 0000 0000 0000 1100
+Logical right shift of -35: 0011 1111 1111 1111 1111 1111 1111 0111
+Arithmetic right shift of 50: 0000 0000 0000 0000 0000 0000 0000 1100
+Arithmetic right shift of -35: 1111 1111 1111 1111 1111 1111 1111 1001
