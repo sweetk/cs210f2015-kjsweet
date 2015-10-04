@@ -36,6 +36,6 @@ done:	add	$a0,$zero,$s2	# Copy sum into a0 for printing
 	li	$v0,1		# print_int
 	syscall
 	
-# Section 3: terminate program normally:
+# Section 4: terminate program normally:
 	li	$v0,10
 	syscall
