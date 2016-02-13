@@ -3,7 +3,7 @@
 //February 12, 2016
 //All work is mine unless otherwise cited
 //
-//This program takes in input to create a rectangle
+//This program takes in input to create a rectangle in the terminal.
 
 #include <stdio.h>
 
@@ -18,8 +18,6 @@ main() {
   printf("You entered: %d, %d\n", x, y);
 
   if(x>=0 && x<=32 && y>=0 && y<=16) {
-    //printf("OK GOOD\n");//test
-
     for(j = 0; j<y; j++) {
       for(i = 0; i<x; i++) {
         if(j == 0 || j == (y-1)){

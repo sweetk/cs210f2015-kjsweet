@@ -5,10 +5,9 @@
 
 # The encode function is property of Bob Roos
 
-# This program will at some point draw a rectangle of the width and height of your choosing.
-# It currently uses (the the Bitmap Display) a unit width and height of 16.
+# This program draws a rectangle in the Bitmap Display tool.
+# It currently uses a unit width and height of 16.
 # The display is assumed to be set at a width of 512 and a height at 256.
-# I hope I REMEMBER to change this as the program changes.
 
 	.data
 	.align	2
@@ -16,11 +15,6 @@ base:	.space	2048
 rows:	.word	16
 cols:	.word	32
 
-prompt:	.asciiz	"Please enter the width of the rectangle, from 0 to 32 and the height, from 0 to 16. On different lines, please:"
-x:	.space	4
-y:	.space	4
-
-red:	.word	0x00FF0000
 black:	.word	0x00000000
 green:	.word	0x0000FF00
 	.text
@@ -47,19 +41,6 @@ loop2:	beq	$s2,32,cont	# THIS IS NOT A LEGAL MIPS COMMAND (but MARS allows it)
 cont:	addi	$a0,$a0,1	# move down a row
 	addi	$s1,$s1,1	# add 1 to counter
 	j	loop
-	
-#Ask for dimensions ##THIS PART ISN'T WORKING
-	la	$a0,prompt
-	li	$v0,4
-	syscall
-	
-	li      $v0,5 	# code for read_int
-	syscall         # perform the read
-	sw 	$v0,x	#save in memory location x
-
-	li      $v0,5   # load code for read_int
-	syscall         # perform the read
-	sw	$v0,y	#save in memory location
 	
 #Draw a green rectangle around the edge
 #top
@@ -109,14 +90,6 @@ loop6:	beq	$s1,16,done	# THIS IS NOT A LEGAL MIPS COMMAND (but MARS allows it)
 	addi	$a0,$a0,1	# move down a row
 	addi	$s1,$s1,1	# add 1 to counter
 	j	loop6
-
-## Draw a red 'pixel' in the top left corner
-#next:	li	$a0,0		#rows
-#	li	$a1,0		#cols
-#	jal	encode
-#	lw	$s0,red
-#	sw	$s0,0($v0)
-##For testing purposes
 
 #End the Program
 done:	li	$v0,10
